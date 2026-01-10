@@ -36,13 +36,13 @@
 - 졸음 감지 알고리즘 결과를 즉시 서버로 송신
 - 서버는 사용자 이메일과 매핑된 앱에 알림 전달
 
-[!detect-sleep](./images/detect-sleep.png)
+![detect-sleep](./images/detect-sleep.png)
 - dlib의 68-point facial landmark 모델을 이용하여 양쪽 눈의 EAR(Eye Aspect Ratio)를 계산
 - EAR 값이 개인별 임계치 이하로 일정 시간(ALERT_DURATION) 이상 유지될 경우 졸음 상태로 판단
 - 단순 눈 깜빡임으로 인한 오탐지를 방지하기 위해 지속 시간 조건과 쿨다운(ALERT_COOLDOWN)을 적용
 - 졸음 감지 시 LED / 부저 알림을 실행하고, WebSocket을 통해 서버에 이벤트를 송신(send_sleepingalert())
 
-[!auto-login](./images/auto-login.png)
+![auto-login](./images/auto-login.png)
 - 앱 시작 시 SharedPreferences에 저장된 JWT 토큰(첫 로그인시 발급해 앱 내 저장소에 저장)과 사용자 이메일을 조회
 - JWT Payload의 exp 값을 디코딩하여 토큰 만료 여부를 직접 검증
 - 유효한 토큰일 경우 별도 로그인 과정 없이 자동 로그인 수행
